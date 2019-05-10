@@ -29,18 +29,18 @@ public class SeedData implements CommandLineRunner
         rolerepos.save(r1);
         rolerepos.save(r2);
 
-        User u1 = new User("barnbarn", "ILuvM4th!", users);
+        User u1 = new User("Austin", "password", admins);
         User u2 = new User("admin", "password", admins);
-        User u3 = new User("Bob", "password", users);
-        User u4 = new User("Jane", "password", users);
+        User u3 = new User("Test", "password", users);
+        User u4 = new User("Test2", "password", users);
 
         // the date and time string should get coverted to a datetime Java data type. This is done in the constructor!
-        u4.getToDos().add(new ToDo("Finish java-orders-swagger", "2019-01-13 04:04:04", u4));
-        u4.getToDos().add(new ToDo("Feed the turtles", "2019-03-01 04:04:04", u4));
-        u4.getToDos().add(new ToDo("Complete the sprint challenge", "2019-02-22 04:04:04", u4));
+        u4.getTodos().add(new Todo("Finish java-orders-swagger", u4));
+        u4.getTodos().add(new Todo("Feed the turtles", u4));
+        u4.getTodos().add(new Todo("Complete the sprint challenge", u4));
 
-        u3.getToDos().add(new ToDo("Walk the dogs", "2019-01-17 04:04:04", u3),
-        u3.getToDos().add(new ToDo("provide feedback to my instructor", "2019-02-13 04:04:04", u3);
+        u3.getTodos().add(new Todo("Walk the dogs", u3),
+                u3.getTodos().add(new Todo("provide feedback to my instructor", u3);
 
         userrepos.save(u1);
         userrepos.save(u2);
