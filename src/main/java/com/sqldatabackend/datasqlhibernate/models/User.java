@@ -42,7 +42,8 @@ public class User extends Auditable
     public User(String username, String password, List<UserRoles> userRoles, List<UserTodos> todos)
     {
         this.username = username;
-        this.password = password;
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        this.password = passwordEncoder.encode(password);
         this.userRoles = userRoles;
         this.todos = todos;
     }
@@ -50,7 +51,8 @@ public class User extends Auditable
     public User(String username, String password, List<UserRoles> userRoles)
     {
         this.username = username;
-        this.password = password;
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        this.password = passwordEncoder.encode(password);
         this.userRoles = userRoles;
     }
 
